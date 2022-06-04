@@ -1,0 +1,45 @@
+[
+    {
+     
+      "name": " Web Development",
+      "img": " https://i.ibb.co/XZHWKdC/service1.png",
+      "des": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+      "price": 1200 
+
+
+    },
+    {
+     
+      "name": " Web & Mobile design",
+      "img": "https://i.ibb.co/99BgsL1/service2.png",
+      "des": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+      "price": 1500 
+    },
+    {
+  
+      "name": "Graphic design",
+      "img": "https://i.ibb.co/QfSVMWs/service3.png",
+      "des": "Amazing flyers, social media posts and brand representations that would make your brand stand out.",
+      "price": 1700 
+    },
+    {
+  
+      "name": "Fibare work and task",
+      "img": "https://i.ibb.co/SJ9zhZB/service4.png",
+      "des": "Amazing V Brake Front Set Metallic Black Bicycle Parts brake pads V brake Bicycle Accessories",
+      "price": 2700 
+    },
+    {
+  
+      "name": "Web V Brake Front Set",
+      "img": "https://i.ibb.co/85s7m4Q/service5.png",
+      "des": "Web V Brake Front Set Metallic Black Bicycle Parts brake pads V brake Bicycle Accessories",
+      "price": 3000 
+    }
+   
+  ]
+
+ 
+
+
+

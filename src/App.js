@@ -11,13 +11,18 @@ import Orders from './Pages/Dashboard/Orders';
 import ServiceList from './Pages/Dashboard/ServiceList';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import AddService from './Pages/Dashboard/AddService';
+import OurTeam from './Pages/OurTeam';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div >
       <Navbar></Navbar>
+      <ToastContainer />
        <Routes>
        <Route path="/" element={<Home />} />
+       <Route path="/ourteam" element={<OurTeam />} />
        <Route path="/login" element={<Login />} />
        <Route path="/singup" element={<Singup />} />
 
@@ -28,7 +33,7 @@ function App() {
 
         <Route path="/dashboard" element={<Dashboard />}> 
         <Route index element={<Review />} />
-        <Route path='order' element={<Orders />} />
+        <Route path='myorder' element={<Orders />} />
         <Route path='service' element={<ServiceList />} />
 
         <Route path='admin' element={<MakeAdmin />} />

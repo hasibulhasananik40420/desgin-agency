@@ -21,7 +21,7 @@ const Navbar = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/dashboard'>Dashboard</Link></li>
                         <li><Link to='/portfolio'>Our Portfolio</Link></li>
-                        <li><Link to='/ourtim'>Our Team</Link></li>
+                        <li><Link to='/ourteam'>Our Team</Link></li>
                         <li><Link to='/contact'>Contact Us</Link></li>
                         {user? <button className='px-12 py-3 bg-[#111430] text-white font-semibold rounded-md md:ml-12'>Singout</button> :<li><Link  to='/login' className='px-12 py-3 bg-[#111430] text-white font-semibold rounded-md md:ml-12'>Login</Link></li>}
 
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
                     <li><Link to='/portfolio'>Our Portfolio</Link></li>
-                    <li><Link to='/ourtim'>Our Team</Link></li>
+                    <li><Link to='/ourteam'>Our Team</Link></li>
                     <li><Link to='/contact'>Contact Us</Link></li>
                     {user? <button onClick={handleSingOut} className='px-12 py-3 bg-[#111430] text-white font-semibold rounded-md md:ml-12'>Singout</button> :<li><Link  to='/login' className='px-12 py-3 bg-[#111430] text-white font-semibold rounded-md md:ml-12'>Login</Link></li>}                   
                 </ul>
