@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../Firebase.init';
 import Loading from './Loading';
+import useToken from './useToken';
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
@@ -11,6 +12,7 @@ const Login = () => {
   const { register, formState: { errors }, handleSubmit } = useForm();
   const navigate = useNavigate() 
   const location = useLocation() 
+   const [token] = useToken(user|| GoogleUser)
   let from = location.state?.from?.pathname || '/'
  
   const onSubmit=(data)=>{
@@ -27,7 +29,7 @@ const Login = () => {
      errorMessage = <p className='text-red-500 font-serif'>{error?.message} || {GoogleError.message}</p>
    }
 
-   if(user|| GoogleUser){
+   if(token){
     navigate(from , {replace: true})
   }
 

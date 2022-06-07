@@ -33,7 +33,7 @@ const AddService = () => {
                     img: img
 
                 }
-                fetch('http://localhost:5000/service',{
+                fetch('https://protected-shore-34848.herokuapp.com/service',{
                     method:'POST',
                     headers:{
                         'content-type': 'application/json',

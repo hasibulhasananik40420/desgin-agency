@@ -14,6 +14,7 @@ import AddService from './Pages/Dashboard/AddService';
 import OurTeam from './Pages/OurTeam';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './Pages/PrivateRoute';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
 
 
 
-        <Route path="/dashboard" element={<Dashboard />}> 
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}> 
         <Route index element={<Review />} />
         <Route path='myorder' element={<Orders />} />
         <Route path='service' element={<ServiceList />} />

@@ -21,7 +21,7 @@ const Products = () => {
             file: e.target.file.value,
             price: e.target.price.value
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://protected-shore-34848.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -54,9 +54,9 @@ const Products = () => {
                     <div class="modal-box">
 
                         <form onSubmit={addOrder} className='md:w-full p-6 bg-[#F4F7FC]'>
-                            <input className='w-full py-4 px-5 rounded-md' name='name' type="text" placeholder='Your name / company’s name' />
+                            <input required className='w-full py-4 px-5 rounded-md' name='name' type="text" placeholder='Your name / company’s name' />
                             <input className='w-full py-4 px-5 mt-4 rounded-md' name='email' type="email" value={user?.email || ''} disabled placeholder='Your Email Address' />
-                            <input className='w-full py-4 px-5 mt-4 rounded-md' name='item' type="text" placeholder='Graphic Design' />
+                            <input disabled className='w-full py-4 px-5 mt-4 rounded-md' name='item' type="text" value={modalService.name} placeholder='Graphic Design' />
                             <input className='w-full py-6 px-5 mt-4 rounded-md' name='project' type="text" placeholder='Project Details' />
                             <div className='flex gap-4'>
                                 <input className='w-full py-4 px-5 mt-4 rounded-md' name='price' type="text" disabled value={modalService?.price} placeholder='Price' />

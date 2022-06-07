@@ -14,7 +14,7 @@ const Review = () => {
              des: e.target.des.value,
             //  photo: user.photoURL
          }
-         fetch('http://localhost:5000/review', {
+         fetch('https://protected-shore-34848.herokuapp.com/review', {
              method:'POST',
              headers:{
                  'content-type':'application/json'

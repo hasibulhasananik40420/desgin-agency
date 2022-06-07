@@ -18,8 +18,8 @@ const Dashboard = () => {
           
             <li><Link className='btn btn-outline mb-2' to=''>Review</Link></li>
             <li><Link  className='btn btn-outline mb-2' to='/dashboard/myorder'>My Order</Link></li>
-            <li><Link className='btn btn-outline mb-2' to='/dashboard/service'>Service List</Link></li>
             <li><Link className='btn btn-outline mb-2' to='/dashboard/admin'>Admin</Link></li>
+            <li><Link className='btn btn-outline mb-2' to='/dashboard/service'>Service List</Link></li>
             <li><Link className='btn btn-outline mb-2' to='/dashboard/addservice'>Add Service</Link></li>
           </ul>
         
