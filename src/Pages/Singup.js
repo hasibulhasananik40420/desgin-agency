@@ -7,34 +7,34 @@ import Loading from './Loading';
 import useToken from './useToken';
 const Singup = () => {
 
- const [createUserWithEmailAndPassword, user, loading, error, ] = useCreateUserWithEmailAndPassword(auth);
- const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
- const [updateProfile] = useUpdateProfile(auth);
- const { register, formState: { errors }, handleSubmit } = useForm();
- const navigate = useNavigate() 
- const location = useLocation() 
- let from = location.state?.from?.pathname || '/'
- const [token] = useToken(user|| GoogleUser)
- const onSubmit =async data => {
-     await createUserWithEmailAndPassword(data.email , data.password) 
-      await updateProfile({displayName: data.name})
-      console.log(data);
- }
+  const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
+  const [updateProfile] = useUpdateProfile(auth);
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  const navigate = useNavigate()
+  const location = useLocation()
+  let from = location.state?.from?.pathname || '/'
+  const [token] = useToken(user || GoogleUser)
+  const onSubmit = async data => {
+    await createUserWithEmailAndPassword(data.email, data.password)
+    await updateProfile({ displayName: data.name })
+    console.log(data);
+  }
 
 
- 
-  
-  if(loading || GoogleLoading){
+
+
+  if (loading || GoogleLoading) {
     return <Loading></Loading>
   }
 
-   let errorMessage ;
-   if(error|| GoogleError){
-     errorMessage = <p className='text-red-500 font-serif'>{error?.message} || {GoogleError.message}</p>
-   }
+  let errorMessage;
+  if (error || GoogleError) {
+    errorMessage = <p className='text-red-500 font-serif'>{error?.message} || {GoogleError?.message}</p>
+  }
 
-   if(token){
-    navigate(from , {replace: true})
+  if (token) {
+    navigate(from, { replace: true })
   }
 
   return (
@@ -63,11 +63,11 @@ const Singup = () => {
                         <div className="mb-4">
 
                           <input   {...register("name", {
-                                    required: {
-                                        value: true,
-                                        message: 'Name is Required'
-                                    }
-                                })}
+                            required: {
+                              value: true,
+                              message: 'Name is Required'
+                            }
+                          })}
 
                             type="text"
                             className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -75,54 +75,54 @@ const Singup = () => {
                             placeholder="Username"
                           />
                           <label className="label">
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500 font-medium">{errors.name.message}</span>}
-                            </label>
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500 font-medium">{errors.name.message}</span>}
+                          </label>
                         </div>
                         <div className="mb-4">
 
                           <input    {...register("email", {
-                                    required: {
-                                        value: true,
-                                        message: 'Email is Required'
-                                    },
-                                    pattern: {
-                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                        message: 'Provide a valid Email'
-                                    }
-                                })}
+                            required: {
+                              value: true,
+                              message: 'Email is Required'
+                            },
+                            pattern: {
+                              value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                              message: 'Provide a valid Email'
+                            }
+                          })}
                             type="email"
                             className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="exampleFormControlInput1"
                             placeholder="Email"
                           />
-                           <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500 font-medium">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500 font-medium">{errors.email.message}</span>}
+                          <label className="label">
+                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-500 font-medium">{errors.email.message}</span>}
+                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500 font-medium">{errors.email.message}</span>}
 
-                            </label>
+                          </label>
                         </div>
 
                         <div className="mb-4">
                           <input  {...register("password", {
-                                required: {
-                                    value: true,
-                                    message: 'Password is Required'
-                                },
-                                minLength: {
-                                    value: 6,
-                                    message: 'Must be 6 characters or longer'
-                                }
-                            })}
+                            required: {
+                              value: true,
+                              message: 'Password is Required'
+                            },
+                            minLength: {
+                              value: 6,
+                              message: 'Must be 6 characters or longer'
+                            }
+                          })}
                             type="password"
                             className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="exampleFormControlInput1"
                             placeholder="Password"
                           />
-                           <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 font-medium">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500 font-medium">{errors.password.message}</span>}
+                          <label className="label">
+                            {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 font-medium">{errors.password.message}</span>}
+                            {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500 font-medium">{errors.password.message}</span>}
 
-                            </label>
+                          </label>
                         </div>
 
 
@@ -141,11 +141,11 @@ const Singup = () => {
                       </form>
 
 
-                       {errorMessage}
+                      {errorMessage}
 
                       <div className="divider">OR</div>
 
-                      <button  onClick={() => signInWithGoogle()}
+                      <button onClick={() => signInWithGoogle()}
                         className=" mycolor inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
                         type="button"
                         data-mdb-ripple="true"
